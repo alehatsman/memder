@@ -1,21 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useRef } from 'react'
+import { View, Text } from 'react-native'
+import Swiper from 'react-native-deck-swiper'
+import { photoCards } from './constants'
+import { Card } from './components/Card'
+import { OverlayLabel } from './components/OverlayLabel'
+import styles from './App.styles'
 
-export default function App() {
+const App = () => {
+  const useSwiper = useRef(null).current
+
+  const handleOnSwipedLeft = () => useSwiper.swipeLeft()
+  const handleOnSwipedTop = () => useSwiper.swipeTop()
+  const handleOnSwipedRight = () => useSwiper.swipeRight()
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View
+      style={styles.container}
+    >
+      <View style={styles.swiperContainer}>
+        <Swiper
+          ref={useSwiper}
+          animateCardOpacity
+          containerStyle={styles.container}
+          cards={photoCards}
+          renderCard={card => <Card card={card} />}
+          cardIndex={0}
+          backgroundColor="white"
+          stackSize={2}
+          infinite
+          showSecondCard
+          animateOverlayLabelsOpacity
+          overlayLabels={{
+            left: {
+              title: 'NOPE',
+              element: <OverlayLabel label="NOPE" color="#E5566D" />,
+              style: {
+                wrapper: styles.overlayWrapper,
+              },
+            },
+            right: {
+              title: 'LIKE',
+              element: <OverlayLabel label="LIKE" color="#4CCC93" />,
+              style: {
+                wrapper: {
+                  ...styles.overlayWrapper,
+                  alignItems: 'flex-start',
+                  marginLeft: 30,
+                },
+              },
+            },
+          }}
+        />
+      </View>
+      <View style={styles.swipeTextContainer}>
+        <Text
+          style={styles.copyright}
+        >
+            All pictures were taken freerly from Unsplash.com.
+            Names on the Photos are the names of photographers who took pictures.
+        </Text>
+      </View>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App

@@ -1,0 +1,43 @@
+export const photoCards = [{
+    "url": "https://i.redd.it/nurkhmgelu851.jpg"
+}, {
+    "url": "https://i.redd.it/gioq5ruiir851.png"
+}, {
+    "url": "https://i.redd.it/p85j4e1wsu851.jpg"
+}, {
+    "url": "https://i.redd.it/rqtqze6s9u851.png"
+}, {
+    "url": "https://i.redd.it/jlve2cjcqt851.jpg"
+}, {
+    "url": "https://i.redd.it/vrzgav10lu851.jpg"
+}, {
+    "url": "https://i.redd.it/a9i51uotcu851.jpg"
+}, {
+    "url": "https://i.redd.it/902mpe1rqr851.png"
+}, {
+    "url": "https://i.redd.it/9nm7wqofht851.jpg"
+}, {
+    "url": "https://i.redd.it/tqosa30eiu851.png"
+}, {
+    "url": "https://i.redd.it/7fm83h9yws851.jpg"
+}, {
+    "url": "https://i.redd.it/9z6a2kmtzs851.png"
+}, {
+    "url": "https://i.redd.it/53vc5f8uoq851.gif"
+}, {
+    "url": "https://i.redd.it/o07hq18vxs851.png"
+}, {
+    "url": "https://i.redd.it/i2xbmu70ou851.jpg"
+}, {
+    "url": "https://i.redd.it/ugaf2gumxs851.jpg"
+}, {
+    "url": "https://i.redd.it/glfjulzhtu851.jpg"
+}, {
+    "url": "https://i.redd.it/guurl4bvxq851.jpg"
+}, {
+    "url": "https://i.redd.it/oomm0tc3et851.jpg"
+}, {
+    "url": "https://i.redd.it/vf25vrtwat851.jpg"
+}, {
+    "url": "https://i.redd.it/443slitnrr851.jpg"
+}]
