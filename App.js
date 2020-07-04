@@ -1,17 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { View, Text } from 'react-native'
 import Swiper from 'react-native-deck-swiper'
 import { photoCards } from './constants'
 import { Card } from './components/Card'
 import { OverlayLabel } from './components/OverlayLabel'
 import styles from './App.styles'
+import { IconButton } from './components/IconButton'
 
 const App = () => {
-  const useSwiper = useRef(null).current
+  const [ref, setRef] = useState(null)
 
-  const handleOnSwipedLeft = () => useSwiper.swipeLeft()
-  const handleOnSwipedTop = () => useSwiper.swipeTop()
-  const handleOnSwipedRight = () => useSwiper.swipeRight()
+  const handleOnSwipedLeft = () => ref.swipeLeft()
+  const handleOnSwipedTop = () => ref.swipeTop()
+  const handleOnSwipedRight = () => ref.swipeRight()
 
   return (
     <View
@@ -19,7 +20,7 @@ const App = () => {
     >
       <View style={styles.swiperContainer}>
         <Swiper
-          ref={useSwiper}
+          ref={ref => setRef(ref)}
           animateCardOpacity
           containerStyle={styles.container}
           cards={photoCards}
@@ -52,13 +53,25 @@ const App = () => {
           }}
         />
       </View>
-      <View style={styles.swipeTextContainer}>
-        <Text
-          style={styles.copyright}
-        >
-            All pictures were taken freerly from Unsplash.com.
-            Names on the Photos are the names of photographers who took pictures.
-        </Text>
+      <View style={styles.buttonsContainer}>
+        <IconButton
+          name="close"
+          onPress={handleOnSwipedLeft}
+          color="white"
+          backgroundColor="#E5566D"
+        />
+        <IconButton
+          name="star"
+          onPress={handleOnSwipedTop}
+          color="white"
+          backgroundColor="#3CA3FF"
+        />
+        <IconButton
+          name="heart"
+          onPress={handleOnSwipedRight}
+          color="white"
+          backgroundColor="#4CCC93"
+        />
       </View>
     </View>
   )

@@ -15,6 +15,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: '15%',
+    paddingBottom: 40
   },
   copyright: {
     textAlign: 'center',
